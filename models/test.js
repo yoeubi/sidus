@@ -3,9 +3,9 @@ module.exports = (sequelize, DataTypes) =>
         "test",
         {
             name: {
-                type: dataTypes.STRING(50),
+                type: DataTypes.STRING(50),
                 allowNull: false
             }
         },
-        { timestamp: true, paranoid: true }
+        { timestamps: true, paranoid: true }
     );

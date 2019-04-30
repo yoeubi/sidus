@@ -8,6 +8,7 @@ router.get("/", async function(req, res, next) {
         const result = await Test.findAll();
         res.json(result);
     } catch (error) {
+        console.log(Test);
         console.error(error);
         next(error);
     }
