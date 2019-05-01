@@ -8,7 +8,7 @@ module.exports = (seqeulize, Datatypes) =>
             }
         },
         {
-            timestampa: true,
+            timestamps: true,
             paranoid: true
         }
     );
