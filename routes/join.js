@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { User } = require("../models");
 
-router.post("/join", async (req, res, next) => {
+router.post("/", async (req, res, next) => {
     const { email } = req.body;
     try {
         const exUser = await User.findONe({ where: { email } });
