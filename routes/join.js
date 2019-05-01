@@ -5,7 +5,7 @@ const { User } = require("../models");
 router.post("/", async (req, res, next) => {
     const { email } = req.body;
     try {
-        const exUser = await User.findONe({ where: { email } });
+        const exUser = await User.findOne({ where: { email } });
         if (exUser) {
             res.status(408).json("이미 가입된 이메일입니다.");
         }
