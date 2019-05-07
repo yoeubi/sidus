@@ -1,13 +1,21 @@
 var express = require("express");
 var router = express.Router();
 const { Test } = require("../models");
+const { isLoggedIn } = require("./middlewares");
 
 /* GET users listing. */
-router.get("/", async function(req, res, next) {
-    await Test.create({
-        name: "테스트중.."
-    });
-    res.redirect("/");
+router.get("/", isLoggedIn, async function(req, res, next) {
+    const {
+        name,
+        email,
+        job,
+        duty,
+        career,
+        task,
+        attachments,
+        image
+    } = req.user;
+    res.json({ name, email, job, duty, career, task, attachments, image });
 });
 
 module.exports = router;
